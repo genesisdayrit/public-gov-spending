@@ -1,0 +1,835 @@
+{
+    "api_endpoints": [
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/",
+            "methods": "GET",
+            "description": "Returns agency overview information for USAspending.gov's Agency Details page for agencies that have ever awarded"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/awards/",
+            "methods": "GET",
+            "description": "Returns agency summary information, specifically the number of transactions and award obligations for the sub agency section of USAspending.gov's Agency Details page"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/awards/new/count/",
+            "methods": "GET",
+            "description": "Returns a count of New Awards for the agency in a single fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/awards/count/",
+            "methods": "GET",
+            "description": "Returns a count of Awards types for agencies in a single fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/budget_function/",
+            "methods": "GET",
+            "description": "Returns a list of Budget Functions and Budget Subfunctions for the agency in a single fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/budget_function/count/",
+            "methods": "GET",
+            "description": "Returns the count of Budget Functions for the agency in a single fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/budgetary_resources/",
+            "methods": "GET",
+            "description": "Returns budgetary resources and obligations for the agency and fiscal year requested"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/federal_account/",
+            "methods": "GET",
+            "description": "Returns a list of Federal Accounts and Treasury Accounts for the agency in a single fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/federal_account/count/",
+            "methods": "GET",
+            "description": "Returns the count of Federal Accounts and Treasury Accounts for the agency in a single fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/object_class/",
+            "methods": "GET",
+            "description": "Returns a list of Object Classes for the agency in a single fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/object_class/count/",
+            "methods": "GET",
+            "description": "Returns the count of Object Classes for the agency in a single fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/obligations_by_award_category/",
+            "methods": "GET",
+            "description": "Returns a breakdown of obligations by award category within a single fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/program_activity/",
+            "methods": "GET",
+            "description": "Returns a list of Program Activity categories for the agency in a single fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/program_activity/count/",
+            "methods": "GET",
+            "description": "Returns the count of Program Activity categories for the agency in a single fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/sub_agency/",
+            "methods": "GET",
+            "description": "Returns a list of sub-agencies and offices with obligated amounts, transaction counts and new award counts for the agency in a single fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/sub_agency/count/",
+            "methods": "GET",
+            "description": "Returns the number of sub-agencies and offices for the agency in a single fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/sub_components/<BUREAU_SLUG>/",
+            "methods": "GET",
+            "description": "Returns a list of federal_accounts by bureau for the agency in a single fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/<TOPTIER_AGENCY_CODE>/sub_components/",
+            "methods": "GET",
+            "description": "Returns a list of bureaus for the agency in a single fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/agency/treasury_account/<TREASURY_ACCOUNT_SYMBOL>/object_class/",
+            "methods": "GET",
+            "description": "Returns a list of Object Classes for the specified Treasury Account Symbol (tas)."
+        },
+        {
+            "endpoint_url": "/api/v2/agency/treasury_account/<TREASURY_ACCOUNT_SYMBOL>/program_activity/",
+            "methods": "GET",
+            "description": "Returns a list of Program Activities for the specified Treasury Account Symbol (tas)."
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/accounts/a/",
+            "methods": "POST",
+            "description": "Returns Treasury Account Symbol Availability Type Code (A) filtered by other components provided in the request filter"
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/accounts/aid/",
+            "methods": "POST",
+            "description": "Returns Treasury Account Symbol/Federal Account Agency Identifier (AID) filtered by other components provided in the request filter"
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/accounts/ata/",
+            "methods": "POST",
+            "description": "Returns Treasury Account Symbol Allocation Transfer Agency Identifier (ATA) filtered by other components provided in the request filter"
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/accounts/bpoa/",
+            "methods": "POST",
+            "description": "Returns Treasury Account Symbol Beginning Period of Availability (BPOA) filtered by other components provided in the request filter"
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/accounts/epoa/",
+            "methods": "POST",
+            "description": "Returns Treasury Account Symbol Ending Period of Availability (EPOA) filtered by other components provided in the request filter"
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/accounts/main/",
+            "methods": "POST",
+            "description": "Returns Treasury Account Symbol/Federal Account Main Account Code (MAIN) filtered by other components provided in the request filter"
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/accounts/sub/",
+            "methods": "POST",
+            "description": "Returns Treasury Account Symbol Sub-Account Code (SUB) filtered by other components provided in the request filter"
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/awarding_agency/",
+            "methods": "POST",
+            "description": "Returns awarding agencies matching the specified search text"
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/awarding_agency_office/",
+            "methods": "POST",
+            "description": "Returns awarding agencies and office matching the specified search text"
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/funding_agency_office/",
+            "methods": "POST",
+            "description": "Returns funding agencies and office matching the specified search text"
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/cfda/",
+            "methods": "POST",
+            "description": "Returns CFDA programs matching the specified search text"
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/city/",
+            "methods": "POST",
+            "description": "Returns city names matching the search text, sorted by relevance"
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/recipient/",
+            "methods": "POST",
+            "description": "Returns recipient names and uei based on search text"
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/funding_agency/",
+            "methods": "POST",
+            "description": "Returns funding agencies matching the specified search text"
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/glossary/",
+            "methods": "POST",
+            "description": "Returns glossary terms matching provided search text"
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/naics/",
+            "methods": "POST",
+            "description": "Returns NAICS objects matching the specified search text"
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/psc/",
+            "methods": "POST",
+            "description": "Returns product or service (PSC) codes and their descriptions based on a search string. This may be the 4-character PSC code or a description string."
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/program_activity/",
+            "methods": "POST",
+            "description": "Returns program activities and their names based on a search string. This may be the 4-character program activity code or a name string."
+        },
+        {
+            "endpoint_url": "/api/v2/autocomplete/location",
+            "methods": "POST",
+            "description": "Returns locations based on search text"
+        },
+        {
+            "endpoint_url": "/api/v2/award_spending/recipient/",
+            "methods": "GET",
+            "description": "Returns all award spending by recipient for a given fiscal year and agency id"
+        },
+        {
+            "endpoint_url": "/api/v2/awards/<AWARD_ID>/",
+            "methods": "GET",
+            "description": "Returns details about specific award"
+        },
+        {
+            "endpoint_url": "/api/v2/awards/accounts/",
+            "methods": "POST",
+            "description": "Returns a list of federal accounts for the indicated award"
+        },
+        {
+            "endpoint_url": "/api/v2/awards/count/federal_account/<AWARD_ID>/",
+            "methods": "GET",
+            "description": "Returns the number of federal accounts associated with the award"
+        },
+        {
+            "endpoint_url": "/api/v2/awards/count/subaward/<AWARD_ID>/",
+            "methods": "GET",
+            "description": "Returns the number of subawards associated with the award"
+        },
+        {
+            "endpoint_url": "/api/v2/awards/count/subaward/<AWARD_ID>/",
+            "methods": "GET",
+            "description": "Returns the number of subawards associated with the award"
+        },
+        {
+            "endpoint_url": "/api/v2/awards/count/transaction/<AWARD_ID>/",
+            "methods": "GET",
+            "description": "Returns the number of transactions associated with the award"
+        },
+        {
+            "endpoint_url": "/api/v2/awards/funding",
+            "methods": "POST",
+            "description": "Returns federal account, awarding agencies, funding agencies, and transaction obligated amount information for a requested award"
+        },
+        {
+            "endpoint_url": "/api/v2/awards/funding_rollup",
+            "methods": "POST",
+            "description": "Returns aggregated count of awarding agencies, federal accounts, and total transaction obligated amount for an award"
+        },
+        {
+            "endpoint_url": "/api/v2/awards/last_updated/",
+            "methods": "GET",
+            "description": "Returns date of last update"
+        },
+        {
+            "endpoint_url": "/api/v2/budget_functions/list_budget_functions/",
+            "methods": "GET",
+            "description": "Returns all Budget Functions associated with a TAS, ordered by Budget Function code"
+        },
+        {
+            "endpoint_url": "/api/v2/budget_functions/list_budget_subfunctions/",
+            "methods": "POST",
+            "description": "Returns all Budget Functions associated with a TAS, ordered by Budget Function code"
+        },
+        {
+            "endpoint_url": "/api/v2/bulk_download/awards/",
+            "methods": "POST",
+            "description": "Generates zip file for download of award data in CSV format"
+        },
+        {
+            "endpoint_url": "/api/v2/bulk_download/list_agencies/",
+            "methods": "POST",
+            "description": "Lists all the agencies and the subagencies or federal accounts associated under specific agencies"
+        },
+        {
+            "endpoint_url": "/api/v2/bulk_download/list_monthly_files/",
+            "methods": "POST",
+            "description": "Lists the monthly files associated with the requested params"
+        },
+        {
+            "endpoint_url": "/api/v2/bulk_download/status/",
+            "methods": "GET",
+            "description": "Returns the current status of a download job that that has been requested with thev2/bulk_download/awards/orv2/bulk_download/transaction/endpoint that same day."
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/agency/count/",
+            "methods": "POST",
+            "description": "Returns the count of Agencies which received disaster/emergency funding"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/agency/loans/",
+            "methods": "POST",
+            "description": "Returns insights on the Agencies awarding loans from disaster/emergency funding"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/agency/spending/",
+            "methods": "POST",
+            "description": "Returns insights on the Agencies which received disaster/emergency funding"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/award/amount/",
+            "methods": "POST",
+            "description": "Returns account data obligation and outlay spending aggregations of all (File D) Awards which received disaster/emergency funding"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/award/count/",
+            "methods": "POST",
+            "description": "Returns the count of account data obligation and outlay spending aggregations of all (File D) Awards which received disaster/emergency funding"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/cfda/count/",
+            "methods": "POST",
+            "description": "Dimension Count of Disaster/Emergency funding data"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/cfda/loans/",
+            "methods": "POST",
+            "description": "Records of loan Disaster/Emergency funding data by dimension"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/cfda/spending/",
+            "methods": "POST",
+            "description": "Records of spending Disaster/Emergency funding data by dimension"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/def_code/count/",
+            "methods": "POST",
+            "description": "Dimension Count of Disaster/Emergency funding data"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/federal_account/count/",
+            "methods": "POST",
+            "description": "Dimension Count of Disaster/Emergency funding data"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/federal_account/loans/",
+            "methods": "POST",
+            "description": "Records of loan Disaster/Emergency funding data by dimension"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/federal_account/spending/",
+            "methods": "POST",
+            "description": "Records of spending Disaster/Emergency funding data by dimension"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/object_class/count/",
+            "methods": "POST",
+            "description": "Dimension Count of Disaster/Emergency funding data"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/object_class/loans/",
+            "methods": "POST",
+            "description": "Records of loan Disaster/Emergency funding data by dimension"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/object_class/spending/",
+            "methods": "POST",
+            "description": "Records of spending Disaster/Emergency funding data by dimension"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/overview/",
+            "methods": "GET",
+            "description": "Overview of Disaster/Emergency funding and spending"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/recipient/count/",
+            "methods": "POST",
+            "description": "Dimension Count of Disaster/Emergency funding data"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/recipient/loans/",
+            "methods": "POST",
+            "description": "Records of loan Disaster/Emergency funding data by dimension"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/recipient/spending/",
+            "methods": "POST",
+            "description": "Records of spending Disaster/Emergency funding data by dimension"
+        },
+        {
+            "endpoint_url": "/api/v2/disaster/spending_by_geography/",
+            "methods": "POST",
+            "description": "Geographic award spending of Disaster/Emergency funding"
+        },
+        {
+            "endpoint_url": "/api/v2/download/accounts/",
+            "methods": "POST",
+            "description": "Generates zip file for download of account data in CSV format"
+        },
+        {
+            "endpoint_url": "/api/v2/download/assistance/",
+            "methods": "POST",
+            "description": "Returns a zipped file containing Assistance data"
+        },
+        {
+            "endpoint_url": "/api/v2/download/awards/",
+            "methods": "POST",
+            "description": "Generates zip file for download of award data in CSV format"
+        },
+        {
+            "endpoint_url": "/api/v2/download/contract/",
+            "methods": "POST",
+            "description": "Returns a zipped file containing Contract data"
+        },
+        {
+            "endpoint_url": "/api/v2/download/count/",
+            "methods": "POST",
+            "description": "Returns the number of transactions that would be included in a download request for the given filter set"
+        },
+        {
+            "endpoint_url": "/api/v2/download/disaster/",
+            "methods": "POST",
+            "description": "Returns a zipped file containing Account and Award data for the Disaster Funding"
+        },
+        {
+            "endpoint_url": "/api/v2/download/disaster/recipients/",
+            "methods": "POST",
+            "description": "Returns a zipped file containing Disaster Recipient Funding data"
+        },
+        {
+            "endpoint_url": "/api/v2/download/idv/",
+            "methods": "POST",
+            "description": "Returns a zipped file containing IDV data"
+        },
+        {
+            "endpoint_url": "/api/v2/download/status/",
+            "methods": "GET",
+            "description": "gets the current status of a download job that that has been requested with thev2/download/awards/orv2/download/transaction/endpoint that same day"
+        },
+        {
+            "endpoint_url": "/api/v2/download/transactions/",
+            "methods": "POST",
+            "description": "Generates zip file for download of award data in CSV format"
+        },
+        {
+            "endpoint_url": "/api/v2/federal_accounts/<ACCOUNT_CODE>/",
+            "methods": "GET",
+            "description": "Returns a federal account based on its federal account code"
+        },
+        {
+            "endpoint_url": "/api/v2/federal_accounts/<ACCOUNT_CODE>/available_object_classes/",
+            "methods": "GET",
+            "description": "Returns financial spending data by object class based on account's internal ID"
+        },
+        {
+            "endpoint_url": "/api/v2/federal_accounts/<ACCOUNT_CODE>/fiscal_year_snapshot/<YEAR>/",
+            "methods": "GET",
+            "description": "Returns budget information for a federal account for the year provided based on account's internal ID"
+        },
+        {
+            "endpoint_url": "/api/v2/federal_accounts/<ACCOUNT_CODE>/fiscal_year_snapshot/",
+            "methods": "GET",
+            "description": "Returns budget information for a federal account for the most recent year based on account's internal ID"
+        },
+        {
+            "endpoint_url": "/api/v2/federal_accounts/",
+            "methods": "POST",
+            "description": "Returns financial spending data by object class"
+        },
+        {
+            "endpoint_url": "/api/v2/federal_obligations/",
+            "methods": "GET",
+            "description": "Returns a paginated list of obligations for the provided agency for the provided year"
+        },
+        {
+            "endpoint_url": "/api/v2/financial_balances/agencies/",
+            "methods": "GET",
+            "description": "Returns financial balances by agency and the latest quarter for the given fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/financial_spending/major_object_class/",
+            "methods": "GET",
+            "description": "Returns financial spending data by object class for the latest quarter based on the given fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/financial_spending/object_class/",
+            "methods": "GET",
+            "description": "Returns financial spending data by object class for the latest quarter based on the given fiscal year"
+        },
+        {
+            "endpoint_url": "/api/v2/idvs/accounts/",
+            "methods": "POST",
+            "description": "Returns a list of federal accounts for the indicated IDV"
+        },
+        {
+            "endpoint_url": "/api/v2/idvs/activity/",
+            "methods": "POST",
+            "description": "Returns information about child awards and grandchild awards for a given IDV (Indefinite Delivery Vehicle)."
+        },
+        {
+            "endpoint_url": "/api/v2/idvs/amounts/<AWARD_ID>/",
+            "methods": "GET",
+            "description": "Returns the direct children of an IDV"
+        },
+        {
+            "endpoint_url": "/api/v2/idvs/awards/",
+            "methods": "POST",
+            "description": "Returns IDVs or contracts related to the requested Indefinite Delivery Vehicle award (IDV)"
+        },
+        {
+            "endpoint_url": "/api/v2/idvs/count/federal_account/<AWARD_ID>/",
+            "methods": "GET",
+            "description": "Returns the number of federal accounts associated with children and grandchild awards of an IDV."
+        },
+        {
+            "endpoint_url": "/api/v2/idvs/funding/",
+            "methods": "POST",
+            "description": "Returns File C funding records associated with an IDV"
+        },
+        {
+            "endpoint_url": "/api/v2/idvs/funding_rollup/",
+            "methods": "POST",
+            "description": "Returns aggregated count of awarding agencies, federal accounts, and total transaction obligated amount for all contracts under an IDV"
+        },
+        {
+            "endpoint_url": "/api/v2/recipient/",
+            "methods": "POST",
+            "description": "Returns a list of recipients in USAspending DB"
+        },
+        {
+            "endpoint_url": "/api/v2/recipient/children/<DUNS_OR_UEI>/",
+            "methods": "GET",
+            "description": "Returns recipient details based on DUNS or UEI number"
+        },
+        {
+            "endpoint_url": "/api/v2/recipient/count/",
+            "methods": "POST",
+            "description": "Returns the count of recipents for the given filters"
+        },
+        {
+            "endpoint_url": "/api/v2/recipient/duns/<HASH_VALUE>/",
+            "methods": "GET",
+            "description": "Returns a high-level overview of a specific recipient, given its id"
+        },
+        {
+            "endpoint_url": "/api/v2/recipient/duns/",
+            "methods": "POST",
+            "description": "Returns a list of recipients in USAspending DB"
+        },
+        {
+            "endpoint_url": "/api/v2/recipient/<HASH_VAlUE>/",
+            "methods": "GET",
+            "description": "Returns an individual recipient in USAspending DB"
+        },
+        {
+            "endpoint_url": "/api/v2/recipient/state/<FIPS>/",
+            "methods": "GET",
+            "description": "Returns basic information about the specified state"
+        },
+        {
+            "endpoint_url": "/api/v2/recipient/state/",
+            "methods": "GET",
+            "description": "Returns basic information about the specified state"
+        },
+        {
+            "endpoint_url": "/api/v2/recipient/state/awards/<FIPS>/",
+            "methods": "GET",
+            "description": "Returns award breakdown based on FIPS"
+        },
+        {
+            "endpoint_url": "/api/v2/reporting/agencies/<TOPTIER_CODE>/differences/",
+            "methods": "GET",
+            "description": "Returns About the Data information about differences in account balance and spending obligations for a specific agency/year/period"
+        },
+        {
+            "endpoint_url": "/api/v2/reporting/agencies/<TOPTIER_CODE>/discrepancies/",
+            "methods": "GET",
+            "description": "Returns TAS discrepancies of the specified agency's submission data for a specific FY/FP"
+        },
+        {
+            "endpoint_url": "/api/v2/references/agency/<AGENCY_ID>/",
+            "methods": "GET",
+            "description": "Returns basic information about a federal agency"
+        },
+        {
+            "endpoint_url": "/api/v2/references/award_types/",
+            "methods": "GET",
+            "description": "Returns a map of award types by award grouping."
+        },
+        {
+            "endpoint_url": "/api/v2/references/cfda/totals//",
+            "methods": "GET",
+            "description": "Provides total values for provided CFDA"
+        },
+        {
+            "endpoint_url": "/api/v2/references/cfda/totals/",
+            "methods": "GET",
+            "description": "Provides total values for all CFDAs"
+        },
+        {
+            "endpoint_url": "/api/v2/references/data_dictionary/",
+            "methods": "GET",
+            "description": "Returns a JSON structure of the Schema team's Rosetta Crosswalk Data Dictionary"
+        },
+        {
+            "endpoint_url": "/api/v2/references/def_codes/",
+            "methods": "GET",
+            "description": "Returns an object of Disaster Emergency Fund (DEF) Codes (DEFC) and titles"
+        },
+        {
+            "endpoint_url": "/api/v2/references/filter/",
+            "methods": "POST",
+            "description": "Accepts an Advanced Search filter object and returns a hash which can be used as a lookup key by/api/v2/references/hash/"
+        },
+        {
+            "endpoint_url": "/api/v2/references/filter_tree/psc/<GROUP>/<PSC>/<PSC>/",
+            "methods": "GET",
+            "description": "Returns a list of PSC under the provided path"
+        },
+        {
+            "endpoint_url": "/api/v2/references/filter_tree/psc/<GROUP>/<PSC>/",
+            "methods": "GET",
+            "description": "Returns a list of PSC under the provided path"
+        },
+        {
+            "endpoint_url": "/api/v2/references/filter_tree/psc/<GROUP>/",
+            "methods": "GET",
+            "description": "Returns a list of PSC under the provided path"
+        },
+        {
+            "endpoint_url": "/api/v2/references/filter_tree/psc/",
+            "methods": "GET",
+            "description": "Returns a list of PSC groupings"
+        },
+        {
+            "endpoint_url": "/api/v2/references/filter_tree/tas/<AGENCY>/<FEDERAL_ACCOUNT>/",
+            "methods": "GET",
+            "description": "Returns a list of Treasury Account Symbols associated with the specified federal account"
+        },
+        {
+            "endpoint_url": "/api/v2/references/filter_tree/tas/<AGENCY>/",
+            "methods": "GET",
+            "description": "Returns a list of federal accounts associated with the specified agency"
+        },
+        {
+            "endpoint_url": "/api/v2/references/filter_tree/tas/",
+            "methods": "GET",
+            "description": "Returns a list of toptier agencies that have at least one TAS affiliated with them"
+        },
+        {
+            "endpoint_url": "/api/v2/references/glossary/",
+            "methods": "GET",
+            "description": "Returns a list of glossary terms and definitions"
+        },
+        {
+            "endpoint_url": "/api/v2/references/hash/",
+            "methods": "POST",
+            "description": "Accepts a hash generated by/api/v2/references/filter/and returns an Advanced Search filter object"
+        },
+        {
+            "endpoint_url": "/api/v2/references/naics/<NAICS_CODE>/",
+            "methods": "GET",
+            "description": "Returns the requested NAICS and immediate children, as well as related, relevant data."
+        },
+        {
+            "endpoint_url": "/api/v2/references/naics/",
+            "methods": "GET",
+            "description": "Returns all Tier 1 (2-digit) NAICS and related, relevant data."
+        },
+        {
+            "endpoint_url": "/api/v2/references/submission_periods/",
+            "methods": "GET",
+            "description": "Returns a list of all available submission periods with essential information about start and end dates."
+        },
+        {
+            "endpoint_url": "/api/v2/references/toptier_agencies/",
+            "methods": "GET",
+            "description": "Returns all toptier agencies and related, relevant data."
+        },
+        {
+            "endpoint_url": "/api/v2/references/total_budgetary_resources/",
+            "methods": "GET",
+            "description": "Returns a list of total budgetary resources totalled by fiscal year and period."
+        },
+        {
+            "endpoint_url": "/api/v2/reporting/agencies/<TOPTIER_CODE>/overview/",
+            "methods": "GET",
+            "description": "Returns a list of submission data for the provided agency."
+        },
+        {
+            "endpoint_url": "/api/v2/reporting/agencies/overview/",
+            "methods": "GET",
+            "description": "Returns About the Data information about all agencies with submissions in a provided fiscal year and period"
+        },
+        {
+            "endpoint_url": "/api/v2/reporting/agencies/publish_dates/",
+            "methods": "GET",
+            "description": "Returns submission publication and certification information about all agencies with submissions in a provided fiscal year and period"
+        },
+        {
+            "endpoint_url": "/api/v2/reporting/agencies/<TOPTIER_CODE>/<FISCAL_YEAR>/<FISCAL_PERIOD>/submission_history/",
+            "methods": "GET",
+            "description": "Returns a list of submission publication dates and certified dates for the provided agency for the provided fiscal year and period."
+        },
+        {
+            "endpoint_url": "/api/v2/reporting/agencies/<TOPTIER_CODE>/<FISCAL_YEAR>/<FISCAL_PERIOD>/unlinked_awards/<TYPE>/",
+            "methods": "GET",
+            "description": "Returns counts of an agency's linked and unlinked awards for a given period."
+        },
+        {
+            "endpoint_url": "/api/v2/search/new_awards_over_time/",
+            "methods": "POST",
+            "description": "Returns a list of time periods with the new awards in the appropriate period within the provided time range"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_award/",
+            "methods": "POST",
+            "description": "Returns the fields of the filtered awards"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_award_count/",
+            "methods": "POST",
+            "description": "Returns the number of awards in each award type (Contracts, IDV, Loans, Direct Payments, Grants, and Other)"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_category/",
+            "methods": "POST",
+            "description": "Returns data that is grouped in preset units to support the various data visualizations on USAspending.gov's Advanced Search page"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_category/awarding_agency/",
+            "methods": "POST",
+            "description": "Returns data that is grouped in preset units to support the Spending by Awarding Agency data visualizations on USAspending.gov's Advanced Search page"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_category/awarding_subagency/",
+            "methods": "POST",
+            "description": "Returns data that is grouped in preset units to support the Spending by Awarding Subgency data visualizations on USAspending.gov's Advanced Search page"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_category/cfda/",
+            "methods": "POST",
+            "description": "Returns data that is grouped in preset units to support the Spending by CFDA data visualizations on USAspending.gov's Advanced Search page"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_category/country/",
+            "methods": "POST",
+            "description": "Returns data that is grouped in preset units to support the Spending by Country data visualizations on USAspending.gov's Recipient Profile page"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_category/county/",
+            "methods": "POST",
+            "description": "Returns data that is grouped in preset units to support the Spending by County data visualizations on USAspending.gov's State Profile page"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_category/district/",
+            "methods": "POST",
+            "description": "Returns data that is grouped in preset units to support the Spending by Congressional District data visualizations on USAspending.gov's State Profile page"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_category/federal_account/",
+            "methods": "POST",
+            "description": "Returns data that is grouped in preset units to support the Spending by Federal Account data visualizations on USAspending.gov's Recipient Profile page"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_category/funding_agency/",
+            "methods": "POST",
+            "description": "Returns data that is grouped in preset units to support the Spending by Funding Agency data visualizations on USAspending.gov's Advanced Search page"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_category/funding_subagency/",
+            "methods": "POST",
+            "description": "Returns data that is grouped in preset units to support the Spending by Funding Subgency data visualizations on USAspending.gov's Advanced Search page"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_category/naics/",
+            "methods": "POST",
+            "description": "Returns data that is grouped in preset units to support the Spending by NAICS data visualizations on USAspending.gov's Advanced Search page"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_category/psc/",
+            "methods": "POST",
+            "description": "Returns data that is grouped in preset units to support the Spending by PSC data visualizations on USAspending.gov's Advanced Search page"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_category/recipient",
+            "methods": "POST",
+            "description": "Returns data that is grouped in preset units to support the Spending by Recipient data visualizations on USAspending.gov's Advanced Search page"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_category/recipient_duns/",
+            "methods": "POST",
+            "description": "Returns data that is grouped in preset units to support the Spending by Recipient DUNS data visualizations on USAspending.gov's Advanced Search page"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_category/state_territory/",
+            "methods": "POST",
+            "description": "Returns data that is grouped in preset units to support the Spending by State Territory data visualizations on USAspending.gov's Recipient Profile page"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_category/defc/",
+            "methods": "POST",
+            "description": "Returns data that is grouped in preset units to support the Spending by DEFC data visualizations on USAspending.gov's Advanced Search page"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_geography/",
+            "methods": "POST",
+            "description": "Returns Spending by state code, county code, or congressional district code"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_transaction/",
+            "methods": "POST",
+            "description": "Returns awards where a certain subset of fields match against search term"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_transaction_count/",
+            "methods": "POST",
+            "description": "Returns counts of awards where a certain subset of fields match against search term"
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_by_transaction_grouped/",
+            "methods": "POST",
+            "description": "Returns transactions where a certain subset of fields match against search terms and results are grouped by their prime award."
+        },
+        {
+            "endpoint_url": "/api/v2/search/spending_over_time/",
+            "methods": "POST",
+            "description": "Returns transaction aggregated amounts for Spending Over Time data visualizations on USAspending.gov"
+        },
+        {
+            "endpoint_url": "/api/v2/search/transaction_spending_summary/",
+            "methods": "POST",
+            "description": "Returns the number of transactions and the sum of federal action obligations for prime awards given a set of award of filters"
+        },
+        {
+            "endpoint_url": "/api/v2/spending/",
+            "methods": "POST",
+            "description": "Returns spending data information through various types and filters"
+        },
+        {
+            "endpoint_url": "/api/v2/subawards/",
+            "methods": "POST",
+            "description": "Returns subawards either related, optionally, to a specific parent award, or for all parent awards if desired"
+        },
+        {
+            "endpoint_url": "/api/v2/transactions/",
+            "methods": "POST",
+            "description": "Returns transactions related to a specific parent award"
+        }
+    ]
+}
+
